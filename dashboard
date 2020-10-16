@@ -12,8 +12,8 @@
 <div id="vis"></div>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/vega/vega/master/docs/examples/bar-chart.vg.json";
-  vegaEmbed('#vis', https://github.com/vivo-codes/FIT3179/blob/main/simple-bar.json).then(function(result) {
+  var spec = "https://vivo-codes.github.io/FIT3179/simple-bar.json";
+  vegaEmbed('#vis', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
