@@ -6,22 +6,13 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
 </head>
 <body>
-  
-<div id="proportional-symbol"></div>
+ <div id="vis"></div>
 
-<script type="text/javascript">
-
-  var spec = "https://vivo-codes.github.io/FIT3179/1-proportional-symbol/VIC_LOCALITY_POLYGON_SHP.json";
-  vegaEmbed('#proportional-symbol', spec).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
-
-</body>
-</html>
+ <script type="text/javascript">
+   var spec = "https://vivo-codes.github.io/FIT3179/1-proportional-symbol/VIC_LOCALITY_POLYGON_SHP.json";
+   vegaEmbed('#vis', spec).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+ </script>
