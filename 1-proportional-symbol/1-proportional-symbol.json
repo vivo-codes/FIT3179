@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 500,
+  "title": "Road Crashes in Victoria from 2014-2018",
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/1-proportional-symbol/vic-locality-polygon.json",
+        "format": {"type": "topojson", "feature": "VIC_LOCALITY_POLYGON_SHP"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes-2014-2018.csv"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"}
+      },
+      "layer": [
+        {
+          "mark": {"type": "square", "tooltip": {"content": "data"}},
+          "encoding": {
+            "color": {
+              "field": "alcohol",
+              "type": "nominal",
+              "scale": {"scheme": "blues"}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {}
+}
