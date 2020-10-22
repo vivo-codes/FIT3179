@@ -16,16 +16,16 @@
 <h1>Victoria's Road Crashes in 2018</h1>
 
 <h2>Road Crashes by Month</h2>
-<div id="choropleth_map"></div>
+<div id="bar-month"></div>
 
 <h2>Alcohol-Related Accidents Across Victoria</h2>
 <div id="map-alcohol"></div>
 
 <script type="text/javascript">
   
-  var vis1 = "js/choropleth_map.vg.json";
+  var vis1 = "https://vivo-codes.github.io/FIT3179/bar-month.json";
   
-  vegaEmbed('#choropleth_map', vis1).then(function(result) {
+  vegaEmbed('#bar-month', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
