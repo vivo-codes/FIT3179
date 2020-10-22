@@ -3,10 +3,43 @@
   "width": 800,
   "height": 600,
   "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"},
+  "params": [
+    {
+      "name": "state-div",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Metro",
+          "Country"
+        ],
+        "labels": [
+          "Show All",
+          "Metro",
+          "Country"
+        ],
+        "name": "Divison Selection: "
+      }
+    }
+  ],
+  "selection": {
+    "state-div": {
+      "type": "multi",
+      "fields": ["state-div"],
+      "bind": "legend"
+    }
+  },
   "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
   "encoding": {
     "x": {"timeUnit": "yearmonth", "field": "date", "type": "ordinal"},
-    "y": {"aggregate": "count", "field":"month"},
-    "color": {"field": "state-div"}
+    "y": {"aggregate": "count", "field": "month"},
+    "color": {"field": "state-div", "title": "State Division"},
+    "tooltip": [
+      {"field": "state-div", "type": "ordinal", "title": "State Division"}
+    ]
+  },
+  "opacity": {
+    "condition": {"selection": "state-div", "value": 0.6},
+    "value": 0.2
   }
 }
