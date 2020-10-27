@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "hit-run", "type": "ordinal"},
+    "color": {"field": "hit-run", "type": "ordinal", "title": "Hit Run"},
+    "tooltip": [
+      {"field": "hit-run", "type": "ordinal", "title": "Hit Run"}
+      ]
+}
+}
