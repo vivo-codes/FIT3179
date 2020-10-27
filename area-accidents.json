@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
+  },
+  "selection": {
+    "accident_selector": {
+      "type": "single",
+      "fields": ["accident-type"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Collision with object",
+          "Collision with vehicle",
+          "Fall from or in moving vehicle",
+          "No collision and no object struck",
+          "Other accident",
+          "Struck animal",
+          "Struck pedestrian",
+          "Vehicle overturned"
+        ],
+        "labels": [
+          "Show All",
+          "Collision with object",
+          "Collision with vehicle",
+          "Fall from or in moving vehicle",
+          "No collision and no object struck",
+          "Other accident",
+          "Struck animal",
+          "Struck pedestrian",
+          "Vehicle overturned"
+        ],
+        "name": "Type of Accident:"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "accident_selector"}}],
+  "mark": "area",
+  "encoding": {
+    "x": {"timeUnit": "yearmonth", "field": "date"},       "axis": {"format": "month"},
+    "y": {"aggregate": "count", "field": "month"},
+    "color": {
+      "field": "accident-type",
+      "type": "nominal",
+      "scale": 
+      {
+        "domain": [
+          "Collision with object",
+          "Collision with vehicle",
+          "Fall from or in moving vehicle",
+          "No collision and no object struck",
+          "Other accident",
+          "Struck animal",
+          "Struck pedestrian",
+          "Vehicle overturned"
+        ]
+      }
+    }
+  }
+}
