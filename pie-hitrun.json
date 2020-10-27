@@ -11,5 +11,5 @@
     "tooltip": [
       {"field": "hit-run", "type": "ordinal", "title": "Hit Run"}
       ]
-}
+  }
 }
