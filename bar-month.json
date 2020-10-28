@@ -64,7 +64,7 @@
     "tooltip": [
       {"field": "month", "type": "nominal", "title": "Month"},
       {"field": "state_div", "type": "ordinal", "title": "State Division"},
-      {"field": "total", "type": "quantitative", "title": "Total Accidents in Division"}
+      {"field": "total", "type": "quantitative", "title": "Total Accidents in Division", "format": ","}
     ]
     }
   }
