@@ -1,15 +1,30 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A simple pie chart with embedded data.",
+  "title": "Hit & Run Incidents in 2018",
   "data": {
     "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
   },
+  "selection": {
+    "alcohol_selector": {
+      "type": "single",
+      "fields": ["alcohol"],
+      "bind": {
+        "input": "select",
+        "options": [null, "Yes", "No"],
+        "labels": ["Show All", "Yes", "No"],
+        "name": "Alcohol Related:"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "alcohol_selector"}}],
   "mark": "arc",
   "encoding": {
-    "theta": {"field": "hit-run", "type": "ordinal"},
-    "color": {"field": "hit-run", "type": "ordinal", "title": "Hit Run"},
+    "theta": {"field": "hit_run", "type": "ordinal"},
+    "color": {"field": "hit_run", "type": "ordinal", "title": "Hit Run",
+          "scale": {"domain": ["Yes", "No", "Not known"],
+          "range": ["#d5b9b2", "#ffe0e9", "#e5c3d1"]}},
     "tooltip": [
-      {"field": "hit-run", "type": "ordinal", "title": "Hit Run"}
+      {"field": "hit_run", "type": "ordinal", "title": "Hit Run"}
       ]
   }
 }
