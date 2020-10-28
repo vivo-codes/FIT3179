@@ -1,53 +1,47 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 200,
-  "data": {
-    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
-  },
+  "width": 600,
+  "height": 300,
+  "title": "Most Common Types of Accidents",
+  "description": "A simple bar chart with embedded data.",
+  "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/accidents.csv"},
   "selection": {
     "accident_selector": {
       "type": "single",
-      "fields": ["accident-type"],
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "Collision with object",
-          "Collision with vehicle",
-          "Fall from or in moving vehicle",
-          "No collision and no object struck",
-          "Other accident",
-          "Struck animal",
-          "Struck pedestrian",
-          "Vehicle overturned"
-        ],
-        "labels": [
-          "Show All",
-          "Collision with object",
-          "Collision with vehicle",
-          "Fall from or in moving vehicle",
-          "No collision and no object struck",
-          "Other accident",
-          "Struck animal",
-          "Struck pedestrian",
-          "Vehicle overturned"
-        ],
-        "name": "Type of Accident:"
-      }
-    }
+      "fields": ["accident_type"],
+      "bind": "legend"}
   },
   "transform": [{"filter": {"selection": "accident_selector"}}],
   "mark": "area",
   "encoding": {
-    "x": {"timeUnit": "yearmonth", "field": "date"},       "axis": {"format": "month"},
-    "y": {"aggregate": "count", "field": "month"},
-    "color": {
-      "field": "accident-type",
-      "type": "nominal",
-      "scale": 
-      {
-        "domain": [
+    "x": {"field": "month",
+    "sort": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"],
+    "type": "ordinal", "axis": {"labelAngle": 0}, "title": "Month"
+    },
+    "y": {
+      "field": "total",
+      "aggregate": "sum",
+      "type": "quantitative",
+      "title": "Total Accidents"},
+      "opacity": {
+        "condition": {"selection": "accident_selector", "value": 1},
+    "value": 0.3},
+      "color": {
+        "field": "accident_type", "title": "Accident Type",
+        "scale": {
+          "domain": [
           "Collision with object",
           "Collision with vehicle",
           "Fall from or in moving vehicle",
@@ -55,9 +49,22 @@
           "Other accident",
           "Struck animal",
           "Struck pedestrian",
-          "Vehicle overturned"
-        ]
+          "Vehicle overturned"],
+          "range": [
+            "#e9d6ec",
+            "#edc4b3",
+            "#fde2e4",
+            "#b8bedd",
+            "#eec6ca",
+            "#dbe7e4",
+            "#e5c3d1",
+            "#d5b9b2"
+            ]
       }
-    }
+      },
+    "tooltip": [
+      {"field": "month", "type": "ordinal", "title": "Month"},
+      {"field": "total", "type": "quantitative", "title": "Total Accidents", "format": ","}
+    ]
   }
 }
