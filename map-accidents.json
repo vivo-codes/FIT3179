@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 800,
   "height": 500,
-  "title": "Road Crashes in Victoria in 2018",
+  "title": "Road Crashes Across Victoria in 2018",
   "projection": {"type": "equirectangular"},
   "layer": [
     {
@@ -10,7 +10,7 @@
         "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/VIC_LOCALITY_POLYGON_SHP.json",
         "format": {"type": "topojson", "feature": "VIC_LOCALITY_POLYGON_SHP"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "#adb5bd", "stroke": "#cad2c5"}
     },
     {
       "data": {
@@ -22,25 +22,56 @@
       },
       "layer": [
         {
-          "mark": {
-            "type": "square"
-            },
+          "mark": {"type": "square"},
           "encoding": {
             "color": {
               "field": "accident_type",
               "type": "ordinal",
               "title": "Accident Type",
-              "scale": {"scheme": "accent"}
+                    "scale": {
+        "domain": [
+          "Collision with object",
+          "Collision with vehicle",
+          "Fall from or in moving vehicle",
+          "No collision and no object struck",
+          "Other accident",
+          "Struck animal",
+          "Struck pedestrian",
+          "Vehicle overturned"
+        ],
+        "range": [
+          "#e9d6ec",
+          "#edc4b3",
+          "#fde2e4",
+          "#b8bedd",
+          "#eec6ca",
+          "#dbe7e4",
+          "#e5c3d1",
+          "#d5b9b2"
+        ]
+      }
             },
-          "tooltip": [
-            {"field": "accident_type", "type": "ordinal", "title": "Accident Type"},
-            {"field": "lga", "type": "ordinal", "title": "LGA"},
-            {"field": "state_div", "type": "ordinal", "title": "State Division"},
-            {"field": "total_persons", "type": "quantitative", "title": "Total Persons"}
-          ]
+            "tooltip": [
+              {
+                "field": "accident_type",
+                "type": "ordinal",
+                "title": "Accident Type"
+              },
+              {"field": "lga", "type": "ordinal", "title": "LGA"},
+              {
+                "field": "state_div",
+                "type": "ordinal",
+                "title": "State Division"
+              },
+              {
+                "field": "total_persons",
+                "type": "quantitative",
+                "title": "Total Persons"
+              }
+            ]
           }
         }
       ]
-}
+    }
   ]
 }
