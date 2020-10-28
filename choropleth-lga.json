@@ -17,10 +17,9 @@
           "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
         },
         "key": "lga",
-        "fields": ["total-persons"]
+        "fields": ["total_persons"]
       }
-    },
-        {"calculate": "datum.total + 0.1", "as": "Total Persons"}
+    }
   ],
   "projection": {
     "type": "equirectangular"
@@ -30,13 +29,12 @@
     },
   "encoding": {
     "color": {
-      "field": "total-persons",
-      "type": "quantitative",
-      "scale": {"type": "log"}
+      "field": "total_persons",
+      "type": "quantitative"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "ordinal", "title": "lga"},
-      {"field": ["total-persons"], "type": "quantitative"}
+      {"field": "total_persons", "type": "quantitative"}
     ]
   }
 
