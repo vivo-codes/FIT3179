@@ -5,6 +5,13 @@
   "title": "Prevalence of Road Accidents by Day in 2018",
   "description": "A simple bar chart with embedded data.",
   "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/day.csv"},
+  "selection": {
+    "day_highlight": {
+      "type": "multi",
+      "fields": ["day"],
+      "bind": "legend"
+    }
+  },
   "mark": "bar",
   "encoding": {
     "x": {"field": "day",
@@ -35,15 +42,20 @@
             "Sunday"],
           "range": [
             "#cb997e",
-            "#eddcd2",
+            "#ccc5b9",
             "#edc4b3",
-            "#fff1e6",
+            "#eddcd2",
             "#ddbea9",
             "#a5a58d",
             "#b7b7a4"
             ]
       }
     },
+    "opacity": {
+    "condition": {"selection": "day_highlight", "value": 1},
+    "value": 0.3
+  },
+
     "tooltip": [
       {"field": "day", "type": "nominal", "title": "Day"},
       {"field": "total", "type": "quantitative", "title": "Total Accidents", "format": ","}
