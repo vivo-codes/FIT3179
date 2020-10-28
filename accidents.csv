@@ -1,0 +1,97 @@
+﻿month,accident_type,total
+January,Collision with object,199
+February,Collision with object,158
+March,Collision with object,180
+April,Collision with object,121
+May,Collision with object,159
+June,Collision with object,139
+July,Collision with object,165
+August,Collision with object,141
+September,Collision with object,115
+October,Collision with object,148
+November,Collision with object,155
+December,Collision with object,120
+January,Collision with vehicle,506
+February,Collision with vehicle,612
+March,Collision with vehicle,642
+April,Collision with vehicle,592
+May,Collision with vehicle,605
+June,Collision with vehicle,521
+July,Collision with vehicle,554
+August,Collision with vehicle,568
+September,Collision with vehicle,501
+October,Collision with vehicle,575
+November,Collision with vehicle,526
+December,Collision with vehicle,513
+January,Fall from or in moving vehicle,2
+February,Fall from or in moving vehicle,2
+March,Fall from or in moving vehicle,1
+April,Fall from or in moving vehicle,5
+May,Fall from or in moving vehicle,2
+June,Fall from or in moving vehicle,2
+July,Fall from or in moving vehicle,3
+August,Fall from or in moving vehicle,4
+September,Fall from or in moving vehicle,4
+October,Fall from or in moving vehicle,9
+November,Fall from or in moving vehicle,5
+December,Fall from or in moving vehicle,8
+January,No collision and no object struck,37
+February,No collision and no object struck,17
+March,No collision and no object struck,35
+April,No collision and no object struck,43
+May,No collision and no object struck,31
+June,No collision and no object struck,22
+July,No collision and no object struck,19
+August,No collision and no object struck,20
+September,No collision and no object struck,33
+October,No collision and no object struck,31
+November,No collision and no object struck,15
+December,No collision and no object struck,17
+January,Other accident,1
+February,Other accident,0
+March,Other accident,1
+April,Other accident,0
+May,Other accident,1
+June,Other accident,1
+July,Other accident,3
+August,Other accident,0
+September,Other accident,2
+October,Other accident,0
+November,Other accident,0
+December,Other accident,1
+January,Struck animal,12
+February,Struck animal,9
+March,Struck animal,7
+April,Struck animal,3
+May,Struck animal,9
+June,Struck animal,10
+July,Struck animal,12
+August,Struck animal,10
+September,Struck animal,5
+October,Struck animal,4
+November,Struck animal,11
+December,Struck animal,11
+January,Struck pedestrian,66
+February,Struck pedestrian,78
+March,Struck pedestrian,94
+April,Struck pedestrian,79
+May,Struck pedestrian,78
+June,Struck pedestrian,95
+July,Struck pedestrian,90
+August,Struck pedestrian,100
+September,Struck pedestrian,80
+October,Struck pedestrian,76
+November,Struck pedestrian,77
+December,Struck pedestrian,77
+January,Vehicle overturned,38
+February,Vehicle overturned,30
+March,Vehicle overturned,67
+April,Vehicle overturned,37
+May,Vehicle overturned,37
+June,Vehicle overturned,35
+July,Vehicle overturned,37
+August,Vehicle overturned,29
+September,Vehicle overturned,21
+October,Vehicle overturned,45
+November,Vehicle overturned,37
+December,Vehicle overturned,31
