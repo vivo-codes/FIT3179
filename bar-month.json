@@ -28,10 +28,42 @@
   "mark": "bar",
   "encoding": {
     "x": {"field": "month",
-    "sort": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    "type": "ordinal", "axis": {"labelAngle": 0}},
-    "y": {"field": "total", "type": "quantitative"},
-    "color": {"field": "state_div", "title": "State Division"},
-    "tooltip": {"field": "state_div", "type": "ordinal", "title": "State Division"}
+    "sort": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"],
+    "type": "ordinal", "axis": {"labelAngle": 0}, "title": "Month"
+    },
+    "y": {
+      "field": "total",
+      "type": "quantitative",
+      "title": "Total Accidents"},
+      "color": {
+        "field": "state_div", "title": "State Division",
+        "scale": {
+          "domain": [
+            "Metro",
+            "Country"
+            ],
+          "range": [
+            "#ddbea9",
+            "#fed9b7"
+            ]
+      }
+    },
+    "tooltip": [
+      {"field": "month", "type": "nominal", "title": "Month"},
+      {"field": "state_div", "type": "ordinal", "title": "State Division"},
+      {"field": "total", "type": "quantitative", "title": "Total Accidents in Division"}
+    ]
     }
   }
