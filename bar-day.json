@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 600,
+  "height": 300,
+  "title": "Prevalence of Road Accidents by Day in 2018",
+  "description": "A simple bar chart with embedded data.",
+  "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/day.csv"},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "day",
+    "sort": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"],
+    "type": "ordinal", "axis": {"labelAngle": 0}, "title": "Day of Week"
+    },
+    "y": {
+      "field": "total",
+      "type": "quantitative",
+      "title": "Total Accidents"},
+      "color": {
+        "field": "day", "title": "Day of Week",
+        "scale": {
+          "domain": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"],
+          "range": [
+            "#cb997e",
+            "#eddcd2",
+            "#edc4b3",
+            "#fff1e6",
+            "#ddbea9",
+            "#a5a58d",
+            "#b7b7a4"
+            ]
+      }
+    },
+    "tooltip": [
+      {"field": "day", "type": "nominal", "title": "Day"},
+      {"field": "total", "type": "quantitative", "title": "Total Accidents", "format": ","}
+    ]
+    }
+  }
