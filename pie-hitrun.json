@@ -2,16 +2,16 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Hit & Run Incidents in 2018",
   "data": {
-    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/hitrun.csv"
   },
   "selection": {
     "alcohol_selector": {
       "type": "single",
-      "fields": ["alcohol"],
+      "fields": ["category"],
       "bind": {
         "input": "select",
-        "options": [null, "Yes", "No"],
-        "labels": ["Show All", "Yes", "No"],
+        "options": ["Alcohol related", "Not alcohol related"],
+        "labels": ["Alcohol related", "Not alcohol related"],
         "name": "Alcohol Related:"
       }
     }
@@ -19,12 +19,13 @@
   "transform": [{"filter": {"selection": "alcohol_selector"}}],
   "mark": "arc",
   "encoding": {
-    "theta": {"field": "hit_run", "type": "ordinal"},
+    "theta": {"field": "total", "type": "quantitative"},
     "color": {"field": "hit_run", "type": "ordinal", "title": "Hit Run",
           "scale": {"domain": ["Yes", "No", "Not known"],
-          "range": ["#d5b9b2", "#ffe0e9", "#e5c3d1"]}},
+          "range": ["#eddcd2", "#ccc5b9", "#aa767c"]}},
     "tooltip": [
-      {"field": "hit_run", "type": "ordinal", "title": "Hit Run"}
+      {"field": "hit_run", "type": "ordinal", "title": "Hit Run"},
+      {"field": "total", "type": "quantitative", "title": "Total Accidents", "format": ","}
       ]
   }
 }
