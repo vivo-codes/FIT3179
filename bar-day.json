@@ -7,7 +7,7 @@
   "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/day.csv"},
   "selection": {
     "day_highlight": {
-      "type": "multi",
+      "type": "single",
       "fields": ["day"],
       "bind": "legend"
     }
