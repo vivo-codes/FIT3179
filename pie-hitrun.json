@@ -11,7 +11,7 @@
       "bind": {
         "input": "select",
         "options": ["Alcohol related", "Not alcohol related"],
-        "labels": ["Alcohol related", "Not alcohol related"],
+        "labels": ["Alcohol Related", "Not Alcohol Related"],
         "name": "Alcohol Related:"
       }
     }
