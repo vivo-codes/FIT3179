@@ -26,7 +26,11 @@
         "labels": ["Show All", "Day", "Dusk/Dawn", "Dark"],
         "name": "Light Condition:"
       }
-          }
+          },
+      "severity_selector": {
+        "type": "single",
+        "fields": ["severity"],
+        "bind": "legend"}
   },
   "transform": [
     {"filter": {"selection": "state_selector"}},
@@ -63,6 +67,9 @@
       "title": "Speed Zone"
     },
     "y": {"field": "severity", "type": "nominal", "title": "Total Accidents", "aggregate": "count", "axis": {"grid": false}},
+    "opacity": {
+      "condition": {"selection": "severity_selector", "value": 1},
+      "value": 0.3},
     "color": {
       "field": "severity",
       "title": "Severity of Accident",
