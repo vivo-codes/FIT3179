@@ -63,7 +63,7 @@
       {
         "field": "severity",
         "type": "quantitative",
-        "title": "Total Accidents in Division",
+        "title": "Total Accidents in Division(s)",
         "aggregate": "count",
         "format": ","
       }
