@@ -28,7 +28,8 @@
     "y": {
       "field": "total",
       "type": "quantitative",
-      "title": "Total Accidents"},
+      "title": "Total Accidents",
+      "axis": {"grid": false}},
       "color": {
         "field": "day", "title": "Day of Week",
         "scale": {
