@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Severity of Accidents by Speed Zone",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
+  },
+  "params": [],
+  "selection": {
+    "state_selector": {
+      "type": "single",
+      "fields": ["state_div"],
+      "bind": {
+        "input": "select",
+        "options": [null, "Metro", "Country"],
+        "labels": ["Show All", "Metro", "Country"],
+        "name": "State Division:"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "state_selector"}}],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "speed_zone",
+      "sort": [
+        "30km/hr",
+        "40 km/hr",
+        "50 km/hr",
+        "60 km/hr",
+        "70 km/hr",
+        "75 km/hr",
+        "80 km/hr",
+        "90 km/hr",
+        "100 km/hr",
+        "110 km/hr"
+      ],
+      "scale": {
+        "domain": [
+        "30 km/hr",
+        "40 km/hr",
+        "50 km/hr",
+        "60 km/hr",
+        "70 km/hr",
+        "80 km/hr",
+        "100 km/hr",
+        "110 km/hr"]
+      },
+      "type": "ordinal",
+      "axis": {"labelAngle": 0},
+      "title": "Month"
+    },
+    "y": {"field": "severity", "type": "nominal", "title": "Total Accidents", "aggregate": "count"},
+    "color": {
+      "field": "severity",
+      "title": "Severity of Accident",
+      "scale": {"domain": ["Fatal accident", "Other injury accident", "Serious injury accident"], "range": ["#b8bedd", "#efc7c2", "#b7b7a4"]}
+    },
+    "tooltip": [
+      {"field": "severity", "type": "ordinal", "title": "Severity"},
+      {"field": "speed_zone", "type": "ordinal", "title": "Speed Zone"},
+      {
+        "field": "severity",
+        "type": "quantitative",
+        "title": "Total Accidents in Division",
+        "aggregate": "count",
+        "format": ","
+      }
+    ]
+  }
+}
