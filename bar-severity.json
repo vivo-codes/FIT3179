@@ -6,7 +6,6 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
   },
-  "params": [],
   "selection": {
     "state_selector": {
       "type": "single",
@@ -17,9 +16,21 @@
         "labels": ["Show All", "Metro", "Country"],
         "name": "State Division:"
       }
-    }
+    },
+    "light_selector": {
+      "type": "single",
+      "fields": ["light_condition"],
+      "bind": {
+        "input": "select",
+        "options": [null, "Day", "Dusk/Dawn", "Dark"],
+        "labels": ["Show All", "Day", "Dusk/Dawn", "Dark"],
+        "name": "Light Condition:"
+      }
+          }
   },
-  "transform": [{"filter": {"selection": "state_selector"}}],
+  "transform": [
+    {"filter": {"selection": "state_selector"}},
+    {"filter": {"selection": "light_selector"}}],
   "mark": "bar",
   "encoding": {
     "x": {
@@ -51,7 +62,7 @@
       "axis": {"labelAngle": 0},
       "title": "Speed Zone"
     },
-    "y": {"field": "severity", "type": "nominal", "title": "Total Accidents", "aggregate": "count"},
+    "y": {"field": "severity", "type": "nominal", "title": "Total Accidents", "aggregate": "count", "axis": {"grid": false}},
     "color": {
       "field": "severity",
       "title": "Severity of Accident",
