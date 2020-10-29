@@ -1,71 +1,67 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 600,
+  "width": 600,
+  "height": 400,
   "title": "Road Accidents in 2018 by Region in Victoria",
   "description": "A simple bar chart with embedded data.",
-  "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"
+  },
   "selection": {
     "state_selector": {
       "type": "single",
       "fields": ["state_div"],
       "bind": {
         "input": "select",
-        "options": [
-          null,
-          "Metro",
-          "Country"
-        ],
-        "labels": [
-          "Show All",
-          "Metro",
-          "Country"
-        ],
+        "options": [null, "Metro", "Country"],
+        "labels": ["Show All", "Metro", "Country"],
         "name": "State Division:"
       }
     }
   },
-  "transform": [{"filter": {"selection": "state_selector"}}],
+  "transform": [
+    {"filter": {"selection": "state_selector"}}
+    ],
   "mark": "bar",
   "encoding": {
-    "x": {"field": "month", 
-    "sort": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"],
-    "type": "ordinal", "axis": {"labelAngle": 0}, "title": "Month"
+    "column": {
+      "field": "state_div", "type": "ordinal", "sort":"descending", "title": ""
     },
-    "y": {
-      "field": "total",
-      "type": "quantitative",
-      "title": "Total Accidents",
-      "axis": {"grid": false}},
-      "color": {
-        "field": "state_div", "title": "State Division",
-        "scale": {
-          "domain": [
-            "Metro",
-            "Country"
-            ],
-          "range": [
-            "#e8ccbf",
-            "#e5c3d1"
-            ]
-      }
+    "x": {
+      "field": "month",
+      "sort": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "type": "ordinal",
+      "axis": {"labelAngle": 0},
+      "title": "Month"
+    },
+    "y": {"field": "total", "type": "quantitative", "title": "Total Accidents","axis": {"grid": false}},
+    "color": {
+      "field": "state_div",
+      "title": "State Division",
+      "scale": {"domain": ["Metro", "Country"], "range": ["#e8ccbf", "#e5c3d1"]}
     },
     "tooltip": [
       {"field": "month", "type": "nominal", "title": "Month"},
       {"field": "state_div", "type": "ordinal", "title": "State Division"},
-      {"field": "total", "type": "quantitative", "title": "Total Accidents in Division", "format": ","}
+      {
+        "field": "total",
+        "type": "quantitative",
+        "title": "Total Accidents in Division",
+        "format": ","
+      }
     ]
-    }
   }
+}
