@@ -33,6 +33,7 @@
     "y": {
       "field": "total",
       "aggregate": "sum",
+      "axis": {"grid": false},
       "type": "quantitative",
       "title": "Total Accidents"},
       "opacity": {
