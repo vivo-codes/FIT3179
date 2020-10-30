@@ -34,6 +34,9 @@
   <h2>xyz</h2>
 <div id="bar-severity"></div>
   
+  <h2>xyz</h2>
+<div id="scatter-accidents"></div>
+  
 <script type="text/javascript">
   
   var vis1 = "https://vivo-codes.github.io/FIT3179/bar-month.json";
@@ -72,6 +75,11 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
+  var vis7 = "https://vivo-codes.github.io/FIT3179/scatter-accidents.json";
+  
+  vegaEmbed('#scatter-accidents', vis6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
   
   
 </script>
