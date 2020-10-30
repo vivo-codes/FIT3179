@@ -64,6 +64,7 @@
 <div id="pie-hitrun"></div>
   
   <h2>Does a higher speed zone lead to greater chance of car accident?</h2>
+  
   <p>This visualisation breaks down the three categories of accident severities – fatal accidents, serious injury accidents, and other injury accidents. 
     
     Other injury accidents are the main severity of accidents, as these can arise from minor accidents that aren’t reported in the remaining two categories. It’s a relief to see that fatal accidents only made up a small proportion of Victorian road accidents in 2018, followed by serious injury accidents.
@@ -73,8 +74,13 @@
   
 <div id="bar-severity"></div>
   
-  <h2>xyz</h2>
-<div id="scatter-accidents"></div>
+  <h2>What type of road accidents resulted in fatality in 2018?</h2>
+  
+  <p>It is evident that collisions with vehicle are the most common type of road incidents amongst both Metro and Country Victoria. This type of accident is likely to result in serious or other injuries, with rare occurrences of fatality.
+    On top of this, the struck of animals on the road in 2018 were not a contributing cause to any fatal accidents.
+  </p>
+  
+<div id="bubble-accidents"></div>
   
   
   
@@ -117,9 +123,9 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var vis7 = "https://vivo-codes.github.io/FIT3179/scatter-accidents.json";
+  var vis7 = "https://vivo-codes.github.io/FIT3179/bubble-accidents.json";
   
-  vegaEmbed('#scatter-accidents', vis7).then(function(result) {
+  vegaEmbed('#bubble-accidents', vis7).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
