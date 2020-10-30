@@ -61,7 +61,7 @@
     "color": {
       "field": "state_div",
       "title": "State Division",
-      "scale": {"domain": ["Metro", "Country"], "range": ["#e8ccbf", "#bbdef0"]}
+      "scale": {"domain": ["Metro", "Country"], "range": ["#e8ccbf", "#e5c3d1"]}
     },
     "tooltip": [
       {"field": "month", "type": "nominal", "title": "Month"},
