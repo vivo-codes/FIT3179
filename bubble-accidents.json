@@ -6,19 +6,6 @@
   "data": {
     "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
   },
-  "params": [
-    {
-      "name": "total_above",
-      "value": 0,
-      "bind": {
-        "input": "range",
-        "min": 0,
-        "max": 1500,
-        "step": 100,
-        "name": "Minimum Accidents:"
-      }
-    }
-  ],
   "encoding": {
     "x": {
       "field": "accident_type",
