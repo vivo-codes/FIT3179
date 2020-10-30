@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 900,
+  "height": 500,
+  "title": "Types of Road Accidents and their Severity by State Division",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/crashes.csv"
+  },
+  "params": [
+    {
+      "name": "total_above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 1500,
+        "step": 100,
+        "name": "Minimum Accidents:"
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "accident_type",
+      "scale": {
+        "domain": [
+          "Collision with object",
+          "Collision with vehicle",
+          "Fall from or in moving vehicle",
+          "No collision and no object struck",
+          "Other accident",
+          "Struck animal",
+          "Struck pedestrian",
+          "Vehicle overturned"
+        ]
+      },
+      "type": "ordinal",
+      "axis": {"labelAngle": 270},
+      "title": "Type of Accident"
+    },
+    "y": {
+      "field": "severity",
+      "type": "ordinal",
+      "title": "Level of Severity",
+      "axis": {"tickCount": 1}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Continent"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "severity",
+          "type": "nominal",
+          "title": "Total Accidents",
+          "aggregate": "count",
+          "scale": {
+            "type": "threshold",
+            "domain": [50, 200, 600],
+            "range": [300, 900, 1500, 2900]
+          },
+          "legend": {"format": "0.1s"}
+        },
+        "color": {
+          "field": "state_div",
+          "type": "nominal",
+          "title": "State Division",
+          "scale": {
+            "domain": [
+              "Metro",
+              "Country"
+            ],
+            "range": [
+              "#e8ccbf",
+              "#bbdef0"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "accident_type", "type": "ordinal", "title": "Accident Type"},
+          {"field": "severity", "type": "ordinal", "title": "Severity"},
+          {"field": "severity", "type": "quantitative", "aggregate": "count", "format": ",", "title": "Number of Accidents"},
+          {"field": "state_div", "type": "ordinal", "title": "State Division"}
+        ]
+      }
+    }
+  ]
+}
