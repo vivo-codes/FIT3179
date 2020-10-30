@@ -19,15 +19,12 @@
       }
     }
   },
-  "transform": [
-    {"filter": {"selection": "state_selector"}}
-    ],
+  "transform": [{"filter": {"selection": "state_selector"}},
+  {"calculate": "datum.state_div == 2 ? 'Metro' : 'Country'", "as": "States"}],
+  "width": {"step": 50},
   "mark": "bar",
   "encoding": {
     "column": {
-      "field": "state_div", "type": "ordinal", "sort":"descending", "title": ""
-    },
-    "x": {
       "field": "month",
       "sort": [
         "January",
@@ -44,10 +41,23 @@
         "December"
       ],
       "type": "ordinal",
-      "axis": {"labelAngle": 0},
-      "title": "Month"
+      "spacing": 10,
+      "title": ""
     },
-    "y": {"field": "total", "type": "quantitative", "title": "Total Accidents","axis": {"grid": false}},
+    "x": {
+      "field": "state_div",
+      "sort": ["Metro", "Country"],
+      "type": "ordinal",
+      "axis": {"labelAngle": 0},
+      "title": ""
+    },
+    "y": {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Total Accidents",
+      "axis": {"grid": false}
+    },
     "color": {
       "field": "state_div",
       "title": "State Division",
