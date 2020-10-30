@@ -3,7 +3,9 @@
   "width": 800,
   "height": 400,
   "title": "Road Accidents in 2018 by Region in Victoria",
-  "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"
+  },
   "selection": {
     "state_selector": {
       "type": "single",
@@ -11,13 +13,8 @@
       "bind": "legend"
     }
   },
-  "transform": [
-    {"filter": {"selection": "state_selector"}}
-  ],
-  "mark": {
-    "type": "line",
-    "point": true
-  },
+  "transform": [{"filter": {"selection": "state_selector"}}],
+  "mark": {"type": "line", "point": true},
   "encoding": {
     "x": {
       "field": "month",
@@ -51,6 +48,7 @@
       "title": "State Division",
       "scale": {"domain": ["Metro", "Country"], "range": ["#e8ccbf", "#e5c3d1"]}
     },
+
     "tooltip": [
       {"field": "month", "type": "nominal", "title": "Month"},
       {"field": "state_div", "type": "ordinal", "title": "State Division"},
@@ -60,6 +58,24 @@
         "title": "Total Accidents in Division",
         "format": ","
       }
-    ]
+        ],
+        "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "state_div", "type": "ordinal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['state_div'] == 'Metro' || datum['state_div'] == 'Country'",
+              "value": 1
+            }
+            }
+          }
   }
 }
