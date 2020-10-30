@@ -1,30 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "width": 800,
   "height": 400,
   "title": "Road Accidents in 2018 by Region in Victoria",
-  "description": "A simple bar chart with embedded data.",
-  "data": {
-    "url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"
-  },
+  "data": {"url": "https://raw.githubusercontent.com/vivo-codes/FIT3179/main/division.csv"},
   "selection": {
     "state_selector": {
       "type": "single",
       "fields": ["state_div"],
-      "bind": {
-        "input": "select",
-        "options": [null, "Metro", "Country"],
-        "labels": ["Show All", "Metro", "Country"],
-        "name": "State Division:"
-      }
+      "bind": "legend"
     }
   },
-  "transform": [{"filter": {"selection": "state_selector"}},
-  {"calculate": "datum.state_div == 2 ? 'Metro' : 'Country'", "as": "States"}],
-  "width": {"step": 50},
-  "mark": "bar",
+  "transform": [
+    {"filter": {"selection": "state_selector"}}
+  ],
+  "mark": {
+    "type": "line",
+    "point": true
+  },
   "encoding": {
-    "column": {
+    "x": {
       "field": "month",
       "sort": [
         "January",
@@ -41,15 +36,8 @@
         "December"
       ],
       "type": "ordinal",
-      "spacing": 10,
-      "title": ""
-    },
-    "x": {
-      "field": "state_div",
-      "sort": ["Metro", "Country"],
-      "type": "ordinal",
       "axis": {"labelAngle": 0},
-      "title": ""
+      "title": "Month"
     },
     "y": {
       "field": "total",
