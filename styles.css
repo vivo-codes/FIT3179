@@ -1,4 +1,4 @@
-head {
+h1 {
     font-family: "Verdana", sans-serif;
     color: Tan; font-size: 60px;
 }
@@ -8,6 +8,5 @@ body {
 }
 
 #line-month {
-	left: 100px;
-	right: 100px;
+	right: 500px;
 }
