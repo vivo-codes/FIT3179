@@ -3,11 +3,16 @@ head {
     color: RosyBrown; font-size: 60px;
 }
 
+h2 {
+    font-family: "Verdana", sans-serif;
+    color: PaleVioletRed; font-size: 60px;
+}
+
 body {
     font-family: "Verdana", sans-serif;
 }
 
 #line-month {
-	left: 500px;
-	right: 500px;
+	left: 700px;
+	right: 700px;
 }
