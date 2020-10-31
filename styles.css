@@ -1,15 +1,16 @@
 h1 {
     font-family: "Verdana", sans-serif;
     color: RosyBrown;
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
     border: 7px solid Tan;
 }
 
 h2 {
     font-family: "Verdana", sans-serif;
+    font-style: italic;
     color: Tan;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     border: 2px solid RosyBrown;
 }
