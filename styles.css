@@ -3,6 +3,7 @@ h1 {
     color: RosyBrown;
     font-size: 60px;
     text-align: center;
+    border: 7px solid Tan;
 }
 
 h2 {
@@ -10,6 +11,7 @@ h2 {
     color: Tan;
     font-size: 40px;
     text-align: center;
+    border: 4px dotted RosyBrown;
 }
 
 body {
