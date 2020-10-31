@@ -3,7 +3,8 @@ h1 {
     color: RosyBrown;
     font-size: 50px;
     text-align: center;
-    border: 7px solid Tan;
+    border: 4px solid Tan;
+    background: MistyRose;
 }
 
 h2 {
