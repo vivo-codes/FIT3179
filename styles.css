@@ -1,6 +1,11 @@
 h1 {
     font-family: "Verdana", sans-serif;
-    color: MistyRose; font-size: 80px
+    color: RosyBrown; font-size: 80px
+}
+
+h2 {
+    font-family: "Verdana", sans-serif;
+    color: Tan; font-size: 40px
 }
 
 body {
